@@ -1,0 +1,105 @@
+<template>
+  <div class="v-text-ellipsis">
+    <slot name="before" class="v-text-ellipsis-before"></slot>
+    <span
+      :style="textStyle"
+      :class="textClass"
+      :content="text"
+      @click="textClick"
+    >
+      <span :key="keyIndex" class="v-text-ellipsis-limit-text">{{ text }}</span>
+      <span v-show="oversize" class="v-text-ellipsis-more">
+        <span v-if="!$slots.more">{{ more }}</span>
+        <slot v-else name="more"></slot>
+      </span>
+    </span>
+    <slot name="after" class="v-text-ellipsis-after"></slot>
+  </div>
+</template>
+<script>
+export default {
+  name: 'VTextEllipsis',
+  props: {
+    text: String,
+    height: Number,
+    isLimitHeight: {
+      type: Boolean,
+      default: true
+    },
+    more: {
+      type: String,
+      default: '...'
+    },
+    textStyle: [String, Object, Array],
+    textClass: [String, Object, Array],
+  },
+  data () {
+    return {
+      keyIndex: 0,
+      oversize: false,
+      isHide: false
+    }
+  },
+  watch: {
+    isLimitHeight () {
+      this.init()
+    },
+    text () {
+      this.init()
+    },
+    height () {
+      this.init()
+    }
+  },
+  mounted () {
+    this.init()
+  },
+  methods: {
+    init () {
+      this.oversize = false
+      this.keyIndex += 1
+      const more = this.$el.querySelector('.v-text-ellipsis-more')
+      more.style.display = 'none'
+      if (this.isLimitHeight) {
+        this.limitShow()
+      }
+    },
+    textClick () {
+      this.$emit('click')
+    },
+    limitShow () {
+      this.$nextTick(() => {
+        const textDom = this.$el.querySelector('.v-text-ellipsis-limit-text')
+        const title = this.$el
+        const more = this.$el.querySelector('.v-text-ellipsis-more')
+        let n = 1000
+        if (textDom) {
+          if (title.offsetHeight > this.height) {
+            more.style.display = 'inline-block'
+            let text = this.text
+            while (title.offsetHeight > this.height && n > 0) {
+              if (title.offsetHeight > this.height * 3) {
+                textDom.innerText = text = text.substring(0, Math.floor(text.length / 2))
+              } else {
+                textDom.innerText = text = text.substring(0, text.length - 1)
+              }
+              n--
+            }
+            this.$emit('hide')
+            this.isHide = true
+          } else {
+            this.$emit('show')
+            this.isHide = false
+          }
+        }
+      })
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.v-text-ellipsis-limit-text {
+  word-break: break-all
+}
+</style>
