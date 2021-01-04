@@ -1,6 +1,6 @@
 {
   "name": "v-text-ellipsis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "vue文本溢出省略组件",
   "main": "dist/v-text-ellipsis.js",
   "scripts": {
