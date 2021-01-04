@@ -28,8 +28,6 @@ export default {
 <v-text-ellipsis :text="text" :height="40"/>
 ```
 
-## props
-
 ### 属性
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
@@ -39,3 +37,11 @@ export default {
 | textStyle     | 文本行内样式   | object   | — |    |
 | textClass     | 文本class   | string/object/array    | — |    |
 | more     | 溢出部分显示   | string | -  | ...
+
+
+### 插槽
+| 名称      | 说明
+|---------- |-------- |---------- |-------------  |-------- |
+| before     | 文本前面的slot 
+| after     | 文本后面的slot   |
+| more      | 省略显示slot     |
