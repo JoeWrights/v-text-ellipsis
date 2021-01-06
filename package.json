@@ -4,8 +4,7 @@
   "description": "vue文本溢出省略组件",
   "main": "dist/v-text-ellipsis.js",
   "scripts": {
-    "build": "webpack --mode production --config build/webpack.config.js",
-    "dev": "webpack-dev-server --open --mode development --config build/webpack.config.js"
+    "build": "webpack --mode production --config build/webpack.config.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -33,6 +32,14 @@
     "文本省略",
     "vue组件"
   ],
-  "author": "JoeWrights",
-  "license": "ISC"
+  "author": "JoeWrights <1035208578@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoeWrights/v-text-ellipsis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JoeWrights/v-text-ellipsis/issues"
+  },
+  "homepage": "https://github.com/JoeWrights/v-text-ellipsis"
 }
