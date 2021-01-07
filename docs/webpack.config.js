@@ -9,7 +9,7 @@ module.exports = {
   entry: ['@babel/polyfill', './src/main.js'],
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: process.env.NODE_ENV === 'production' ? 'https://joewrights.github.io/v-text-ellipsis/' : '',
     filename: 'build.js'
   },
   module: {
