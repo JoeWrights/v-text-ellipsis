@@ -1,6 +1,8 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -37,31 +39,48 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               config: {
-                path: path.resolve(__dirname, '.postcssrc.js'),
-              },
-            },
-          },
-        ],
+                path: path.resolve(__dirname, '.postcssrc.js')
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.(scss|sass)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
-      },
+      }
     ]
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      vue$: 'vue/dist/vue.esm.js'
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
+  optimization: {
+    minimizer: [
+      new UglifyjsWebpackPlugin({
+        parallel: true,
+        sourceMap: false,
+        uglifyOptions: {
+          output: {
+            comments: false
+          }
+        }
+      })
+    ],
+    noEmitOnErrors: true
+  },
   plugins: [
     new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:7].css'
+    })
   ],
   devServer: {
     historyApiFallback: true,
     disableHostCheck: true,
-    port: 7777,
+    port: 7777
   },
   performance: {
     hints: false
