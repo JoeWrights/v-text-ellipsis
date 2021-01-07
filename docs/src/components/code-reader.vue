@@ -43,7 +43,10 @@ export default {
   watch: {
     file: {
       async handler () {
-        const { default: data } = await import(`!!raw-loader!../demos/${this.file}`)
+        const { default: data } = await import(
+          /* webpackChunkName: "[request]" */
+          `!!raw-loader!../demos/${this.file}`
+        )
         this.code = data
       },
       immediate: true

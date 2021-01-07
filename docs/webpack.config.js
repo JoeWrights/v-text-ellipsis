@@ -57,25 +57,8 @@ module.exports = {
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
-  optimization: {
-    minimizer: [
-      new UglifyjsWebpackPlugin({
-        parallel: true,
-        sourceMap: false,
-        uglifyOptions: {
-          output: {
-            comments: false
-          }
-        }
-      })
-    ],
-    noEmitOnErrors: true
-  },
   plugins: [
-    new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:7].css'
-    })
+    new VueLoaderPlugin()
   ],
   devServer: {
     historyApiFallback: true,
@@ -96,6 +79,23 @@ if (process.env.NODE_ENV === 'production') {
       'process.env': {
         NODE_ENV: '"production"'
       }
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:7].css'
     })
   ])
+  module.optimization = {
+    minimizer: [
+      new UglifyjsWebpackPlugin({
+        parallel: true,
+        sourceMap: false,
+        uglifyOptions: {
+          output: {
+            comments: false
+          }
+        }
+      })
+    ],
+    noEmitOnErrors: true
+  }
 }
