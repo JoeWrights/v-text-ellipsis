@@ -31,7 +31,7 @@ export default {
       default: '...'
     },
     textStyle: [String, Object, Array],
-    textClass: [String, Object, Array],
+    textClass: [String, Object, Array]
   },
   data () {
     return {
