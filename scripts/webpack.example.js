@@ -12,7 +12,7 @@ const currentConfig = {
   entry: ['@babel/polyfill', pathResolve('../examples/src/main.js')],
   output: {
     path: genePath('docs'),
-    publicPath: isProduction ? 'https://joewrights.github.io/v-text-ellipsis/dist' : '',
+    publicPath: isProduction ? 'https://joewrights.github.io/v-text-ellipsis/' : '',
     filename: 'build.[hash:7].js'
   },
   plugins: [
