@@ -14,6 +14,11 @@
             <code-reader slot="code" file="demo2.vue"></code-reader>
             <md-reader slot="desc">通过`height`属性控制显示多少行省略</md-reader>
           </demo-code>
+          <demo-code>
+            <demo3 slot="demo"></demo3>
+            <code-reader slot="code" file="demo3.vue"></code-reader>
+            <md-reader slot="desc">通过`after`插槽控制展开收起</md-reader>
+          </demo-code>
         </template>
       </doc-section>
     </div>
@@ -28,12 +33,14 @@ import MdReader from './md-reader.vue'
 import CodeReader from './code-reader.vue'
 import Demo1 from '../demos/demo1.vue'
 import Demo2 from '../demos/demo2.vue'
+import Demo3 from '../demos/demo3.vue'
 
 export default {
   name: 'ComponentPage',
   components: {
     Demo1,
     Demo2,
+    Demo3,
     DocTitle,
     DocSection,
     DemoCode,

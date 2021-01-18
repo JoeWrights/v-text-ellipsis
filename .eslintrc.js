@@ -13,6 +13,12 @@ module.exports = {
   plugins: [
     'vue'
   ],
+  settings: {
+    'import/alias': {
+      '@examples': 'examples/src/',
+      '@': 'src',
+    }
+  },
   rules: {
     // 允许使用async-await
     'generator-star-spacing': 'off',

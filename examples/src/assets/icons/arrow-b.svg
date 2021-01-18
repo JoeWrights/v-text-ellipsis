@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="8px" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>收起</title>
+    <desc>Created with Sketch.</desc>
+    <g id="一期设计稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-34.000000, -67.000000)" fill="#999999">
+            <g id="图标/箭头/下拉小箭头黑" transform="translate(38.000000, 71.000000) scale(-1, 1) translate(-38.000000, -71.000000) translate(34.000000, 67.000000)">
+                <path d="M4.4330127,0.75 L7.03108891,5.25 C7.1691601,5.48914631 7.08722252,5.79494151 6.84807621,5.9330127 C6.77206661,5.97689687 6.68584454,6 6.59807621,6 L1.40192379,6 C1.12578141,6 0.901923789,5.77614237 0.901923789,5.5 C0.901923789,5.41223167 0.925026921,5.3260096 0.968911087,5.25 L3.5669873,0.75 C3.70505849,0.510853688 4.01085369,0.428916111 4.25,0.566987298 C4.3260096,0.610871464 4.38912854,0.673990395 4.4330127,0.75 Z" id="多边形" transform="translate(4.000000, 4.000000) scale(1, -1) translate(-4.000000, -4.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
