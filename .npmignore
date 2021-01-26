@@ -1,9 +1,11 @@
 .github/
 build/
+scripts/
 docs/
 demo-src/
 node_modules/
 public/
+examples/
 tests/
 
 .editorconfig
@@ -14,6 +16,7 @@ tests/
 .babelrc
 babel.config.js
 jest.config.js
+jsconfig.json
 package-lock.json
 vue.config.js
 
