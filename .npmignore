@@ -11,6 +11,7 @@ tests/
 .editorconfig
 .eslintignore
 .eslintrc.js
+.postcssrc.js
 .gitignore
 .npmignore
 .babelrc
